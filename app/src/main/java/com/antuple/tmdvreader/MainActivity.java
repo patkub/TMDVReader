@@ -1,15 +1,19 @@
 package com.antuple.tmdvreader;
 
+import android.content.Context;
 import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.inputmethod.EditorInfo;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.view.View.OnClickListener;
 import android.widget.EditText;
 import android.widget.TextView;
+
+import static android.view.KeyEvent.KEYCODE_ENTER;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -27,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
         txtHex.setImeOptions(EditorInfo.IME_ACTION_DONE);
 
         // on convert button
-        btnConvert.setOnClickListener( new OnClickListener() {
+        btnConvert.setOnClickListener(new OnClickListener() {
             public void onClick(View v) {
                 convert(txtHex, txtVersion);
             }
@@ -38,7 +42,6 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
                 if (actionId == EditorInfo.IME_ACTION_DONE) {
-                    System.out.println("keyboard enter pressed!");
                     convert(txtHex, txtVersion);
                     return true;
                 }

@@ -25,6 +25,7 @@
         android:layout_height="wrap_content"
         android:inputType="textPersonName"
         android:hint="major.minor.macro"
+        android:imeOptions="actionDone"
         android:ems="10"
         android:id="@+id/editTextVersion"
         android:layout_marginTop="27dp"
